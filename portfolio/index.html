@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ranadeep Dey - Dataflix Style Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-main">
+                <h1 class="logo">DATAFLIX</h1>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+            </div>
+            <div class="nav-secondary">
+                <div class="ai-chat-search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" class="search-icon">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="text" placeholder="Ask AI... (Coming soon)" class="ai-input" readonly>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / Billboard Section -->
+    <header class="billboard" id="home">
+        <div class="billboard-content">
+            <h1 class="title">RANADEEP DEY</h1>
+            <h2 class="subtitle">AI & Data Scientist</h2>
+            <p class="synopsis">
+                He is an AI and Data Scientist with over 3 years of experience leveraging cutting-edge technologies like
+                AWS, Generative AI, Large Language Models (LLMs), Agents, Python, Machine Learning, Deep Learning,
+                Synthetic Data Generation, and SQL. Currently contributing to Generative AI at Deloitte, bringing
+                fault-tolerant multi-agent architectures to life.
+            </p>
+            <div class="btn-group">
+                <a href="https://www.linkedin.com/in/ranadeep-dey/" class="btn btn-play" target="_blank"
+                    rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg> Play Resume
+                </a>
+                <a href="https://drive.google.com/file/d/1AYl605sSqKSDmKocEo9rDd4yoiIaaFW1/view?usp=sharing"
+                    class="btn btn-info" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="width:18px;height:18px;">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="7 10 12 15 17 10" />
+                        <line x1="12" y1="15" x2="12" y2="3" />
+                    </svg> Download Resume
+                </a>
+                <a href="#experience" class="btn btn-info">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z" />
+                    </svg> Episodes
+                </a>
+            </div>
+        </div>
+        <div class="vignette"></div>
+        <div class="fade-bottom"></div>
+    </header>
+
+    <main class="slider-container">
+        <!-- Experience Row -->
+        <div class="slider-row" id="experience">
+            <h2 class="row-header">Trending Now: Experience Seasons</h2>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <div class="item-visuals bg-gradient-1">
+                        <h3>S2: Consultant</h3>
+                        <p class="company-name">Deloitte</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata">
+                            <span class="match-score">99% Match</span>
+                            <span class="cert-age">T</span>
+                            <span class="duration">2025 - Present</span>
+                        </div>
+                        <p class="desc">Designed & deployed Agentic AI apps using Multi-agent architectures, MCP,
+                            LangGraph, LLMs in the cloud. Managed a team of 5+ devs to build 10+ Gen-AI tools.</p>
+                        <ul class="genres">
+                            <li>Agentic AI</li>
+                            <li>LLMs</li>
+                            <li>Leadership</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-gradient-2">
+                        <h3>S1: Analyst</h3>
+                        <p class="company-name">Deloitte</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata">
+                            <span class="match-score">96% Match</span>
+                            <span class="cert-age">T</span>
+                            <span class="duration">2023 - 2025</span>
+                        </div>
+                        <p class="desc">Reduced manual efforts by 4800+ hrs/mo via GPU-based ingestion pipelines.
+                            Developed SetFit-based models and custom LLM chains.</p>
+                        <ul class="genres">
+                            <li>NLP</li>
+                            <li>Pipelines</li>
+                            <li>Prompt Eng</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Row -->
+        <div class="slider-row" id="skills">
+            <h2 class="row-header">Because You Watched "Data Science"</h2>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <div class="item-visuals bg-pattern-1">
+                        <h3>Data Science & AI</h3>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Core Concept</span></div>
+                        <p class="desc">Machine Learning, NLP, LangGraph, Langchain, TensorFlow, PyTorch, LLMs, Vector
+                            DBs, Prompt Engineering, A2A Protocol.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-pattern-2">
+                        <h3>System Design</h3>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Architecture</span></div>
+                        <p class="desc">Multi-Agent Architectures, Scalable RAG Pipelines, RESTful API Design, MCP.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-pattern-3">
+                        <h3>Cloud & DevOps</h3>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Infrastructure</span></div>
+                        <p class="desc">AWS (Bedrock, Sagemaker, Lambda, EC2), CI/CD, GitHub Actions, Docker,
+                            Kubernetes, Kubeflow.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-pattern-4">
+                        <h3>Languages</h3>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Syntax</span></div>
+                        <p class="desc">Python, SQL, Bash/Scripting.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Row -->
+        <div class="slider-row" id="achievements">
+            <h2 class="row-header">Critically Acclaimed (Achievements)</h2>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <div class="item-visuals bg-award-1">
+                        <h3>Performance Awards</h3>
+                        <p>Deloitte SME</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="cert-age">Award</span></div>
+                        <p class="desc">Received multiple Outstanding Performer and GEM awards for leading Gen-AI teams
+                            across POCs and use-cases, recognized as an SME.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-award-2">
+                        <h3>Consultant in 2.5 Yrs</h3>
+                        <p>Rapid Growth</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="cert-age">Career</span></div>
+                        <p class="desc">Accelerated to Consultant in 2.5 years, demonstrating rapid professional growth
+                            and technical mastery.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-award-3">
+                        <h3>Hosted Deep Dives</h3>
+                        <p>50+ Developers</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="cert-age">Speaker</span></div>
+                        <p class="desc">Presented multiple Deep Dives on scalable architectures and development of
+                            production-ready Gen-AI applications.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-gradient-1">
+                        <h3>IEEE Publication</h3>
+                        <p>1st Author</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="cert-age">Research</span> <span class="duration">Aug 18,
+                                2022</span></div>
+                        <p class="desc">Published research paper: A comparative Study of Handwritten Devanagari Script
+                            Character Recognition Techniques.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-gradient-2">
+                        <h3>Student of the Year</h3>
+                        <p>Dynamic Student Award</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="cert-age">Award</span></div>
+                        <p class="desc">Recognized as Student of the Year across all departments during the final year
+                            of engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Row -->
+        <div class="slider-row" id="certifications">
+            <h2 class="row-header">Certified Fresh (Certifications)</h2>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <div class="item-visuals bg-cert-1">
+                        <h3>AWS ML Specialty</h3>
+                        <p>Certified</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Certified</span></div>
+                        <p class="desc">Earned the AWS Certified Machine Learning – Specialty certification.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-cert-2">
+                        <h3>AWS Practitioner</h3>
+                        <p>Certified</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata"><span class="match-score">Certified</span></div>
+                        <p class="desc">Earned the AWS Certified Cloud Practitioner certification.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Row -->
+        <div class="slider-row" id="education" style="margin-bottom: 50px;">
+            <h2 class="row-header">Origins: Education Saga</h2>
+            <div class="slider-wrapper">
+                <div class="slider-item">
+                    <div class="item-visuals bg-edu-1">
+                        <h3>MIT Academy of Eng</h3>
+                        <p>B.Tech IT</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata">
+                            <span class="match-score">Grade: 9.4</span>
+                            <span class="duration">2018 - 2022</span>
+                        </div>
+                        <p class="desc">Minor Specialization: Machine Learning.</p>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-edu-2">
+                        <h3>Jai Hind Jr College</h3>
+                        <p>12th, PCMB</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata">
+                            <span class="match-score">Grade: 89.3%</span>
+                            <span class="duration">2016 - 2018</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-item">
+                    <div class="item-visuals bg-edu-3">
+                        <h3>Nirmal Bethany High</h3>
+                        <p>10th, SSC</p>
+                    </div>
+                    <div class="item-details">
+                        <div class="item-metadata">
+                            <span class="match-score">Grade: 92%</span>
+                            <span class="duration">2015 - 2016</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <p>Built with agentic AI & and Antigravity with Gemini 3.1 Pro</p>
+            <p>&copy; 2026 DATAFLIX - Ranadeep Dey.</p>
+        </div>
+    </footer>
+
+    <!-- Dataflix Modal Backdrop & Content -->
+    <div id="item-modal" class="modal-backdrop">
+        <div class="modal-container">
+            <div class="modal-header" id="modal-header">
+                <button class="modal-close" id="modal-close">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z" />
+                    </svg>
+                </button>
+                <div class="modal-header-content">
+                    <h2 id="modal-title">Title</h2>
+                </div>
+                <div class="modal-fade"></div>
+            </div>
+            <div class="modal-body">
+                <div id="modal-tags" class="modal-tags"></div>
+                <div id="modal-desc" class="modal-desc"></div>
+                <div class="modal-genres">
+                    <strong style="color: #737373;">Tags / Genres:</strong>
+                    <ul id="modal-genres-list" class="genres"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
