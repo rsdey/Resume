@@ -537,10 +537,12 @@ body {
     }
 
     .slider-wrapper {
-        display: grid;
-        grid-template-columns: 1fr;
-        overflow-x: unset;
-        overflow-y: unset;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
         padding: 0.5rem 0;
         gap: 1rem;
     }
