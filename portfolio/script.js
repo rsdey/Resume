@@ -302,33 +302,4 @@ if (hamburgerBtn && mobileNavEl) {
     });
 }
 
-// AI Chat Search Click Teaser
-const aiChatSearch = document.getElementById('ai-chat-search-btn');
-if (aiChatSearch) {
-    aiChatSearch.addEventListener('click', (e) => {
-        e.stopPropagation(); // prevent modal close on clicking the search bar
-
-        modalTitle.innerText = "Gen-AI Powered Search Bar";
-        modalTags.innerHTML = '<span class="match-score">Coming Soon</span><span class="cert-age">Pre-release</span>';
-        modalDesc.innerHTML = `
-            <p><strong>Experience my portfolio interactively!</strong></p>
-            <p style="margin-top:0.5rem">Soon, this search bar will evolve into an intelligent, context-aware chatbot. Powered by LLMs and advanced RAG pipelines, it will act as an interactive agent that knows my entire resume!</p>
-            <ul style="margin-top:1rem; margin-left: 1.5rem;">
-                <li style="margin-bottom:0.5rem">Ask complex questions about my technical experience.</li>
-                <li style="margin-bottom:0.5rem">Compare my skills against your job requirements dynamically.</li>
-                <li>Experience robust Multi-Agent architecture in real-time.</li>
-            </ul>
-        `;
-
-        modalGenres.innerHTML = "";
-        ["Gen-AI", "RAG Pipeline", "Gemini API", "Assistant"].forEach(genre => {
-            const li = document.createElement('li');
-            li.innerText = genre;
-            modalGenres.appendChild(li);
-        });
-
-        modalHeader.className = "modal-header bg-gradient-2";
-        modal.classList.add('active');
-        document.body.style.overflow = "hidden";
-    });
-}
+// AI Chat Search functionality is now moved to chatbot.js
