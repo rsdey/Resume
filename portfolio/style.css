@@ -438,266 +438,99 @@ body {
 }
 
 /* ===========================
-   RESPONSIVE STYLES
+   HAMBURGER MENU BUTTON
    =========================== */
-
-/* --- Tablet (≤ 1024px) --- */
-@media (max-width: 1024px) {
-    .billboard-content {
-        width: 70%;
-    }
-
-    .slider-item {
-        flex: 0 0 22%;
-        min-width: 200px;
-    }
-
-    .title {
-        font-size: 3.5rem;
-    }
-
-    .modal-body {
-        padding: 0 2rem 2.5rem;
-        gap: 2rem;
-    }
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 4px;
+    border-radius: 4px;
+    margin-left: 0.75rem;
+    flex-shrink: 0;
 }
 
-/* --- Mobile (≤ 768px) --- */
-@media (max-width: 768px) {
-
-    /* Navbar */
-    .nav-links {
-        display: none;
-    }
-
-    .logo {
-        font-size: 1.6rem;
-        margin-right: 0;
-    }
-
-    .ai-chat-search {
-        padding: 5px 10px;
-    }
-
-    .ai-input {
-        width: 120px;
-        font-size: 0.85rem;
-    }
-
-    /* Hero Billboard */
-    .billboard {
-        height: auto;
-        min-height: 85vh;
-        background-position: center center;
-        align-items: flex-end;
-        padding-bottom: 4rem;
-    }
-
-    .billboard-content {
-        width: 100%;
-        padding: 90px 5% 1rem;
-    }
-
-    .title {
-        font-size: 2.8rem;
-        letter-spacing: -1px;
-    }
-
-    .subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .synopsis {
-        font-size: 1.05rem;
-        margin-bottom: 1.5rem;
-    }
-
-    /* Buttons */
-    .btn-group {
-        flex-wrap: wrap;
-        gap: 0.7rem;
-    }
-
-    .btn {
-        font-size: 1rem;
-        padding: 0.6rem 1.3rem;
-    }
-
-    .btn svg {
-        width: 18px;
-        height: 18px;
-        margin-right: 6px;
-    }
-
-    /* Slider — vertical stacked grid on mobile */
-    .slider-container {
-        margin-top: -2rem;
-        padding: 0 4%;
-    }
-
-    .slider-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        overflow-x: visible;
-        overflow-y: visible;
-        width: 100%;
-        padding: 0.5rem 0;
-        gap: 1rem;
-    }
-
-    .slider-item {
-        flex: unset;
-        width: 100%;
-        min-width: unset;
-        margin-right: 0;
-    }
-
-    .slider-item:hover {
-        transform: scale(1.01);
-    }
-
-    /* Show the details panel always (not only on hover) on mobile */
-    .item-details {
-        display: block;
-        position: static;
-        box-shadow: none;
-    }
-
-    .row-header {
-        font-size: 1.15rem;
-        margin-bottom: 0.8rem;
-    }
-
-    .slider-row {
-        margin-bottom: 2rem;
-    }
-
-    .item-visuals {
-        height: 130px;
-    }
-
-    .item-visuals h3 {
-        font-size: 1.2rem;
-    }
-
-    .desc {
-        font-size: 0.95rem;
-    }
-
-    .item-metadata {
-        font-size: 1rem;
-    }
-
-    /* Modal */
-    .modal-container {
-        width: 95%;
-        max-height: 90vh;
-    }
-
-    .modal-header {
-        height: 200px;
-    }
-
-    .modal-header-content {
-        left: 1.5rem;
-        bottom: 1rem;
-    }
-
-    .modal-header-content h2 {
-        font-size: 1.7rem;
-    }
-
-    .modal-body {
-        grid-template-columns: 1fr;
-        padding: 0 1.5rem 2rem;
-        gap: 1rem;
-    }
-
-    .modal-tags {
-        font-size: 0.95rem;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        margin-bottom: 1rem;
-    }
-
-    .modal-desc {
-        font-size: 1rem;
-        grid-column: 1 / 2;
-    }
-
-    .modal-genres {
-        grid-column: 1 / 2;
-        font-size: 0.9rem;
-    }
+.hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    transform-origin: center;
 }
 
-/* --- Small phones (≤ 480px) --- */
-@media (max-width: 480px) {
-    .logo {
-        font-size: 1.4rem;
-    }
+.hamburger.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
 
-    .ai-input {
-        width: 85px;
-        font-size: 0.8rem;
-    }
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
 
-    .title {
-        font-size: 2.2rem;
-    }
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
 
-    .subtitle {
-        font-size: 1.15rem;
-    }
+/* Mobile Nav Drawer */
+.mobile-nav {
+    display: none;
+    position: fixed;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.98);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999;
+    padding: 0.5rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    transform: translateY(-12px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+}
 
-    .synopsis {
-        font-size: 0.95rem;
-    }
+.mobile-nav.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
 
-    .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1rem;
-    }
+.mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 
-    /* Slider still stays vertical (inherits from 768px) */
-    .slider-container {
-        padding: 0 4%;
-    }
+.mobile-nav ul li a {
+    display: block;
+    padding: 0.9rem 6%;
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: color 0.2s, background 0.2s;
+    letter-spacing: 0.3px;
+}
 
-    .row-header {
-        font-size: 1rem;
-    }
+.mobile-nav ul li:last-child a {
+    border-bottom: none;
+}
 
-    .item-visuals h3 {
-        font-size: 1.1rem;
-    }
-
-    .desc {
-        font-size: 0.9rem;
-    }
-
-    .modal-header {
-        height: 160px;
-    }
-
-    .modal-header-content h2 {
-        font-size: 1.4rem;
-    }
-
-    .modal-body {
-        padding: 0 1rem 1.5rem;
-    }
-
-    .modal-desc {
-        font-size: 0.95rem;
-    }
-
-    .footer {
-        font-size: 0.8rem;
-        margin-top: 3rem;
-    }
+.mobile-nav ul li a:hover,
+.mobile-nav ul li a:active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.07);
 }
 
 /* Modal Styling */
@@ -841,4 +674,341 @@ body {
     margin-top: 0.5rem;
 }
 
-/* modal 768px rules merged into the main 768px block above */
+/* ===========================
+   RESPONSIVE STYLES
+   =========================== */
+
+/* --- Tablet (≤ 1024px) --- */
+@media (max-width: 1024px) {
+    .billboard-content {
+        width: 70%;
+    }
+
+    .slider-item {
+        flex: 0 0 22%;
+        min-width: 200px;
+    }
+
+    .title {
+        font-size: 3.5rem;
+    }
+
+    .modal-body {
+        padding: 0 2rem 2.5rem;
+        gap: 2rem;
+    }
+}
+
+/* --- Mobile (≤ 768px) --- */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .mobile-nav {
+        display: block;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        margin-right: 0;
+    }
+
+    /* Collapse AI search to icon-only on mobile */
+    .ai-chat-search {
+        padding: 7px 10px;
+    }
+
+    .ai-input {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 0;
+    }
+
+    /* Hero Billboard */
+    .billboard {
+        height: auto;
+        min-height: 88vh;
+        background-position: center center;
+        align-items: flex-end;
+        padding-bottom: 2rem;
+    }
+
+    .billboard-content {
+        width: 100%;
+        padding: 100px 5% 2rem;
+    }
+
+    .title {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        letter-spacing: -0.5px;
+        line-height: 1.1;
+        margin-bottom: 0.3rem;
+    }
+
+    .subtitle {
+        font-size: clamp(1rem, 4.5vw, 1.35rem);
+        margin-bottom: 0.8rem;
+    }
+
+    .synopsis {
+        font-size: clamp(0.88rem, 3.6vw, 1rem);
+        margin-bottom: 1.4rem;
+        line-height: 1.55;
+    }
+
+    /* Buttons */
+    .btn-group {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .btn {
+        font-size: 0.95rem;
+        padding: 0.65rem 1.2rem;
+        min-height: 44px;
+    }
+
+    .btn svg {
+        width: 18px;
+        height: 18px;
+        margin-right: 6px;
+    }
+
+    /* Slider layout on mobile */
+    .slider-container {
+        margin-top: -2rem;
+        padding: 0 4%;
+    }
+
+    /* Default: single column (for Experience with only 2 long items) */
+    .slider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-x: visible;
+        overflow-y: visible;
+        width: 100%;
+        padding: 0.5rem 0;
+        gap: 0.85rem;
+    }
+
+    /* 2-column card grid for sections with shorter cards */
+    #skills .slider-wrapper,
+    #achievements .slider-wrapper,
+    #certifications .slider-wrapper,
+    #education .slider-wrapper {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .slider-item {
+        flex: unset;
+        width: 100%;
+        min-width: unset;
+        margin-right: 0;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    /* Disable scale-hover on touch devices */
+    .slider-item:hover {
+        transform: none;
+        box-shadow: none;
+        z-index: 1;
+    }
+
+    /* Always show details panel on mobile (no hover needed) */
+    .item-details {
+        display: block;
+        position: static;
+        box-shadow: none;
+        border-radius: 0 0 6px 6px;
+        padding: 0.65rem 0.8rem;
+    }
+
+    .item-visuals {
+        border-radius: 6px 6px 0 0;
+    }
+
+    .row-header {
+        font-size: 1rem;
+        margin-bottom: 0.75rem;
+        letter-spacing: 0.2px;
+    }
+
+    .slider-row {
+        margin-bottom: 2rem;
+    }
+
+    .item-visuals {
+        height: 108px;
+        padding: 0.7rem;
+    }
+
+    .item-visuals h3 {
+        font-size: clamp(0.82rem, 3.4vw, 1rem);
+        font-weight: 700;
+        line-height: 1.25;
+    }
+
+    .company-name,
+    .item-visuals p {
+        font-size: 0.73rem;
+        margin-top: 0.2rem;
+    }
+
+    .desc {
+        font-size: 0.78rem;
+        line-height: 1.4;
+        margin-bottom: 0.35rem;
+    }
+
+    .item-metadata {
+        font-size: 0.75rem;
+        gap: 0.3rem;
+        flex-wrap: wrap;
+        margin-bottom: 0.35rem;
+    }
+
+    .genres {
+        font-size: 0.68rem;
+        gap: 0.25rem;
+    }
+
+    /* Modal */
+    .modal-container {
+        width: 96%;
+        max-height: 92vh;
+        border-radius: 6px;
+    }
+
+    .modal-header {
+        height: 190px;
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
+        width: 34px;
+        height: 34px;
+    }
+
+    .modal-header-content {
+        left: 1.2rem;
+        bottom: 1rem;
+    }
+
+    .modal-header-content h2 {
+        font-size: 1.6rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+
+    .modal-body {
+        grid-template-columns: 1fr;
+        padding: 1.2rem 1.2rem 2.5rem;
+        gap: 1.2rem;
+    }
+
+    .modal-tags {
+        font-size: 0.88rem;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .modal-desc {
+        font-size: 0.92rem;
+        grid-column: 1 / 2;
+        line-height: 1.55;
+    }
+
+    .modal-genres {
+        grid-column: 1 / 2;
+        font-size: 0.85rem;
+    }
+}
+
+/* --- Small phones (≤ 390px) --- */
+@media (max-width: 390px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .title {
+        font-size: clamp(1.75rem, 8vw, 2.3rem);
+    }
+
+    .subtitle {
+        font-size: clamp(0.9rem, 4vw, 1.15rem);
+    }
+
+    .synopsis {
+        font-size: clamp(0.82rem, 3.5vw, 0.95rem);
+    }
+
+    .btn {
+        font-size: 0.88rem;
+        padding: 0.6rem 1rem;
+    }
+
+    /* Force single column on very small phones */
+    #skills .slider-wrapper,
+    #achievements .slider-wrapper,
+    #certifications .slider-wrapper,
+    #education .slider-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .slider-container {
+        padding: 0 3%;
+    }
+
+    .row-header {
+        font-size: 0.9rem;
+    }
+
+    .item-visuals {
+        height: 96px;
+    }
+
+    .item-visuals h3 {
+        font-size: 0.88rem;
+    }
+
+    .desc {
+        font-size: 0.74rem;
+    }
+
+    .modal-header {
+        height: 150px;
+    }
+
+    .modal-header-content h2 {
+        font-size: 1.4rem;
+        line-height: 1.2;
+    }
+
+    .modal-body {
+        padding: 0.75rem 1rem 1.5rem;
+    }
+
+    .modal-desc {
+        font-size: 0.88rem;
+    }
+
+    .modal-tags {
+        font-size: 0.8rem;
+    }
+
+    .footer {
+        font-size: 0.78rem;
+        margin-top: 3rem;
+    }
+}

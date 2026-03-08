@@ -279,8 +279,31 @@ modal.addEventListener('click', (e) => {
     }
 });
 
+// Hamburger Menu Toggle
+const hamburgerBtn = document.getElementById('hamburger');
+const mobileNavEl = document.getElementById('mobile-nav');
+
+if (hamburgerBtn && mobileNavEl) {
+    hamburgerBtn.addEventListener('click', () => {
+        const isOpen = hamburgerBtn.classList.toggle('open');
+        mobileNavEl.classList.toggle('open', isOpen);
+        hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+        mobileNavEl.setAttribute('aria-hidden', String(!isOpen));
+    });
+
+    // Auto-close mobile nav when a link is tapped
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburgerBtn.classList.remove('open');
+            mobileNavEl.classList.remove('open');
+            hamburgerBtn.setAttribute('aria-expanded', 'false');
+            mobileNavEl.setAttribute('aria-hidden', 'true');
+        });
+    });
+}
+
 // AI Chat Search Click Teaser
-const aiChatSearch = document.querySelector('.ai-chat-search');
+const aiChatSearch = document.getElementById('ai-chat-search-btn');
 if (aiChatSearch) {
     aiChatSearch.addEventListener('click', (e) => {
         e.stopPropagation(); // prevent modal close on clicking the search bar
