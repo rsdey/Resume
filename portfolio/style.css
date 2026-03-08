@@ -471,7 +471,7 @@ body {
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         margin-right: 0;
     }
 
@@ -481,7 +481,7 @@ body {
 
     .ai-input {
         width: 120px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 
     /* Hero Billboard */
@@ -499,17 +499,17 @@ body {
     }
 
     .title {
-        font-size: 2.6rem;
+        font-size: 2.8rem;
         letter-spacing: -1px;
     }
 
     .subtitle {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         margin-bottom: 0.8rem;
     }
 
     .synopsis {
-        font-size: 0.95rem;
+        font-size: 1.05rem;
         margin-bottom: 1.5rem;
     }
 
@@ -520,8 +520,8 @@ body {
     }
 
     .btn {
-        font-size: 0.9rem;
-        padding: 0.5rem 1.2rem;
+        font-size: 1rem;
+        padding: 0.6rem 1.3rem;
     }
 
     .btn svg {
@@ -530,28 +530,62 @@ body {
         margin-right: 6px;
     }
 
-    /* Slider */
+    /* Slider — vertical stacked grid on mobile */
     .slider-container {
         margin-top: -2rem;
-        padding: 0 3%;
+        padding: 0 4%;
+    }
+
+    .slider-wrapper {
+        display: grid;
+        grid-template-columns: 1fr;
+        overflow-x: unset;
+        overflow-y: unset;
+        padding: 0.5rem 0;
+        gap: 1rem;
     }
 
     .slider-item {
-        flex: 0 0 42%;
-        min-width: 160px;
-        margin-right: 0.6rem;
+        flex: unset;
+        width: 100%;
+        min-width: unset;
+        margin-right: 0;
     }
 
     .slider-item:hover {
-        transform: scale(1.03);
+        transform: scale(1.01);
+    }
+
+    /* Show the details panel always (not only on hover) on mobile */
+    .item-details {
+        display: block;
+        position: static;
+        box-shadow: none;
     }
 
     .row-header {
-        font-size: 1rem;
+        font-size: 1.15rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .slider-row {
+        margin-bottom: 2rem;
     }
 
     .item-visuals {
-        height: 120px;
+        height: 130px;
+    }
+
+    .item-visuals h3 {
+        font-size: 1.2rem;
+    }
+
+    .desc {
+        font-size: 0.95rem;
+    }
+
+    .item-metadata {
+        font-size: 1rem;
     }
 
     /* Modal */
@@ -570,7 +604,7 @@ body {
     }
 
     .modal-header-content h2 {
-        font-size: 1.6rem;
+        font-size: 1.7rem;
     }
 
     .modal-body {
@@ -580,61 +614,65 @@ body {
     }
 
     .modal-tags {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-bottom: 1rem;
     }
 
     .modal-desc {
-        font-size: 0.95rem;
+        font-size: 1rem;
         grid-column: 1 / 2;
     }
 
     .modal-genres {
         grid-column: 1 / 2;
-        font-size: 0.85rem;
+        font-size: 0.9rem;
     }
 }
 
 /* --- Small phones (≤ 480px) --- */
 @media (max-width: 480px) {
     .logo {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .ai-input {
-        width: 80px;
-        font-size: 0.75rem;
+        width: 85px;
+        font-size: 0.8rem;
     }
 
     .title {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 
     .subtitle {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
 
     .synopsis {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 
     .btn {
-        font-size: 0.82rem;
-        padding: 0.45rem 0.9rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
     }
 
-    .slider-item {
-        flex: 0 0 70%;
-        min-width: 200px;
-    }
-
+    /* Slider still stays vertical (inherits from 768px) */
     .slider-container {
         padding: 0 4%;
     }
 
     .row-header {
+        font-size: 1rem;
+    }
+
+    .item-visuals h3 {
+        font-size: 1.1rem;
+    }
+
+    .desc {
         font-size: 0.9rem;
     }
 
@@ -643,7 +681,7 @@ body {
     }
 
     .modal-header-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .modal-body {
@@ -651,11 +689,11 @@ body {
     }
 
     .modal-desc {
-        font-size: 0.88rem;
+        font-size: 0.95rem;
     }
 
     .footer {
-        font-size: 0.75rem;
+        font-size: 0.8rem;
         margin-top: 3rem;
     }
 }
@@ -801,22 +839,4 @@ body {
     margin-top: 0.5rem;
 }
 
-@media (max-width: 768px) {
-    .modal-body {
-        grid-template-columns: 1fr;
-        padding: 0 1.5rem 2rem;
-        gap: 1.5rem;
-    }
-
-    .modal-header {
-        height: 200px;
-    }
-
-    .modal-header-content h2 {
-        font-size: 1.8rem;
-    }
-
-    .modal-genres {
-        grid-column: 1 / 2;
-    }
-}
+/* modal 768px rules merged into the main 768px block above */
