@@ -63,6 +63,7 @@ class DataflixChatbot {
         this.isActive = false;
         this.mode = 'profile'; // 'profile' or 'general'
         this.history = [];
+        this.tourKey = "dataflix_chatbot_tour_seen";
 
         // DOM Elements
         this.widget = null;
@@ -80,6 +81,7 @@ class DataflixChatbot {
         this.createDOM();
         this.addEventListeners();
         this.renderInitialMessage();
+        this.checkTour();
     }
 
     createDOM() {
@@ -89,6 +91,11 @@ class DataflixChatbot {
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                     </svg>
+                </div>
+                <div class="chat-tooltip" id="chatbot-tooltip">
+                    <h4>New: Portfolio AI</h4>
+                    <p>Ask me anything about Ranadeep's experience and skills!</p>
+                    <button class="tooltip-close" id="tooltip-close-btn">Got it!</button>
                 </div>
                 <div class="chat-window" id="chatbot-window">
                     <div class="chat-header">
@@ -136,11 +143,21 @@ class DataflixChatbot {
         this.closeBtn = document.getElementById('chatbot-close');
         this.toggleBtn = document.getElementById('chatbot-toggle');
         this.clearBtn = document.getElementById('chatbot-clear');
+        this.tooltip = document.getElementById('chatbot-tooltip');
+        this.tooltipClose = document.getElementById('tooltip-close-btn');
     }
 
     addEventListeners() {
-        this.toggleBtn.addEventListener('click', () => this.toggleWindow());
+        this.toggleBtn.addEventListener('click', () => {
+            this.toggleWindow();
+            this.dismissTooltip();
+        });
         this.closeBtn.addEventListener('click', () => this.toggleWindow(false));
+
+        this.tooltipClose.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.dismissTooltip();
+        });
 
         this.inputField.addEventListener('input', () => {
             this.sendBtn.disabled = !this.inputField.value.trim();
@@ -192,6 +209,23 @@ class DataflixChatbot {
     toggleWindow(state) {
         this.isActive = state !== undefined ? state : !this.isActive;
         this.chatWindow.classList.toggle('active', this.isActive);
+    }
+
+    checkTour() {
+        if (!localStorage.getItem(this.tourKey)) {
+            setTimeout(() => {
+                if (!this.isActive) {
+                    this.tooltip.classList.add('active');
+                }
+            }, 2000); // Show after 2 seconds
+        }
+    }
+
+    dismissTooltip() {
+        if (this.tooltip) {
+            this.tooltip.classList.remove('active');
+            localStorage.setItem(this.tourKey, 'true');
+        }
     }
 
     renderInitialMessage() {
